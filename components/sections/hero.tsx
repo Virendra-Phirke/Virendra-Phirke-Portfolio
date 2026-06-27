@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { buttonVariants } from "@/components/ui/button";
-import { ChevronDown, FileText, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronDown, FileText, Github, Linkedin, Mail, Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import MagneticButton from "@/components/magnetic-button";
@@ -172,6 +172,10 @@ export default function Hero() {
               <a href="https://github.com/Virendra-Phirke" target="_blank" className="hover:text-[#2dba4e] transition-colors">
                 <Github className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
+              </a>
+              <a href="https://www.instagram.com/virendra_phirke" target="_blank" className="hover:text-[#E1306C] transition-colors">
+                <Instagram className="h-6 w-6" />
+                <span className="sr-only">Instagram</span>
               </a>
               <a href="mailto:virendraphirke2222@gmail.com" className="hover:text-[#ea4335] transition-colors">
                 <Mail className="h-6 w-6" />

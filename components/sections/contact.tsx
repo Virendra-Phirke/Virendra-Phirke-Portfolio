@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send, Github, Linkedin, MapPin, Phone, Copy, Check } from "lucide-react";
+import { Mail, Send, Github, Linkedin, MapPin, Phone, Copy, Check, Instagram } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 import { useState } from "react";
@@ -138,6 +138,9 @@ export default function Contact() {
                 </motion.a>
                 <motion.a whileHover={{ y: -5, scale: 1.1 }} whileTap={{ scale: 0.95 }} href="#" target="_blank" className="border border-border p-3 hover:bg-zinc-900 transition-all bg-transparent text-muted-foreground hover:text-foreground hover:border-primary">
                   <Linkedin className="w-5 h-5" />
+                </motion.a>
+                <motion.a whileHover={{ y: -5, scale: 1.1 }} whileTap={{ scale: 0.95 }} href="https://www.instagram.com/virendra_phirke" target="_blank" className="border border-border p-3 hover:bg-zinc-900 transition-all bg-transparent text-muted-foreground hover:text-foreground hover:border-primary">
+                  <Instagram className="w-5 h-5" />
                 </motion.a>
               </div>
             </motion.div>

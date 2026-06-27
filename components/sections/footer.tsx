@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -17,6 +17,9 @@ export default function Footer() {
         </a>
         <a href="#" target="_blank" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-border flex items-center justify-center opacity-60 hover:opacity-100 hover:border-border hover:scale-110 hover:-translate-y-1 transition-all">
           <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
+        </a>
+        <a href="https://www.instagram.com/virendra_phirke" target="_blank" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-border flex items-center justify-center opacity-60 hover:opacity-100 hover:border-border hover:scale-110 hover:-translate-y-1 transition-all">
+          <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
         </a>
       </div>
     </footer>

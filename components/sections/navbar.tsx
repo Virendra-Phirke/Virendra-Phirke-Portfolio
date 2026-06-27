@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { Eye, EyeOff, Moon, Sun, Github, Linkedin, Mail, X, User, Code2, FolderKanban, Briefcase, Send } from "lucide-react";
+import { Eye, EyeOff, Moon, Sun, Github, Linkedin, Mail, X, User, Code2, FolderKanban, Briefcase, Send, Instagram } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const navLinks = [
@@ -16,6 +16,7 @@ const navLinks = [
 const socialLinks = [
   { name: "GitHub", href: "https://github.com/Virendra-Phirke", icon: Github },
   { name: "LinkedIn", href: "https://linkedin.com/in/virendra-phirke", icon: Linkedin },
+  { name: "Instagram", href: "https://www.instagram.com/virendra_phirke", icon: Instagram },
   { name: "Email", href: "mailto:virendraphirke@gmail.com", icon: Mail },
 ];
 
