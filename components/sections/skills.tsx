@@ -105,14 +105,14 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 relative border-t border-border bg-background">
+    <section id="skills" className="py-16 sm:py-24 relative border-t border-border bg-background">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
             <motion.span 
@@ -141,7 +141,7 @@ export default function Skills() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.1 } }
           }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
         >
           {categories.map((category, idx) => (
             <motion.div

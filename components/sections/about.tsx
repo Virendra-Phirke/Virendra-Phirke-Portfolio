@@ -28,7 +28,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={containerRef} className="py-24 relative border-t border-border/50 overflow-hidden">
+    <section id="about" ref={containerRef} className="py-16 sm:py-24 relative border-t border-border/50 overflow-hidden">
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-x-0 inset-y-[-20%] z-0 flex items-center justify-center pointer-events-none opacity-[0.02]"
@@ -52,7 +52,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
             <motion.span 
@@ -73,7 +73,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -86,14 +86,14 @@ export default function About() {
                 }
               }
             }}
-            className="space-y-6 relative border-l border-border/50 pl-6 lg:pl-10 ml-2"
+            className="space-y-5 sm:space-y-6 relative border-l border-border/50 pl-5 sm:pl-6 lg:pl-10 ml-2"
           >
             <motion.p 
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.25, 0, 1] } }
               }}
-              className="text-muted-foreground text-lg leading-relaxed"
+              className="text-muted-foreground text-[15px] sm:text-lg leading-relaxed"
             >
               I am a software developer based in Akola, Maharashtra. I specialize in building end-to-end products—from designing secure architectures to crafting responsive frontends.
             </motion.p>
@@ -102,7 +102,7 @@ export default function About() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.25, 0, 1] } }
               }}
-              className="text-muted-foreground text-lg leading-relaxed"
+              className="text-muted-foreground text-[15px] sm:text-lg leading-relaxed"
             >
               My journey started with a fascination for how systems work under the hood. Since then, I&apos;ve shipped a live EdTech SaaS, developed cross-platform Android applications, and explored AI-integrated web tooling. I view code not just as logic, but as a medium to solve real-world problems.
             </motion.p>
@@ -162,10 +162,10 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="border border-border bg-muted/50 rounded-none p-8"
+            className="border border-border bg-muted/50 rounded-none p-5 sm:p-8"
           >
             <h3 className="font-heading text-xl font-semibold mb-6 uppercase tracking-widest text-xs">By the Numbers</h3>
-            <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {stats.map((stat, i) => (
                 <motion.div 
                   key={i} 
@@ -173,7 +173,7 @@ export default function About() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="text-3xl font-bold font-heading text-primary">{stat.value}</div>
+                  <div className="text-2xl sm:text-3xl font-bold font-heading text-primary">{stat.value}</div>
                   <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">{stat.label}</div>
                 </motion.div>
               ))}

@@ -36,14 +36,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative border-t border-border bg-background">
+    <section id="contact" className="py-16 sm:py-24 relative border-t border-border bg-background">
       <div className="container mx-auto px-6 max-w-5xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
             <motion.span 
@@ -62,12 +62,12 @@ export default function Contact() {
             >Get In Touch</motion.h2>
             <div className="h-px bg-border flex-1 ml-4 hidden sm:block"></div>
           </div>
-          <p className="text-muted-foreground text-lg max-w-2xl">
+          <p className="text-muted-foreground text-[15px] sm:text-lg max-w-2xl">
             Currently open to new opportunities. Whether you have a question, a project proposal, or just want to say hi, I&apos;ll try my best to get back to you!
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-8 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-8 items-start">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export default function Contact() {
                 <div>
                   <div className="font-mono uppercase tracking-widest text-xs text-foreground mb-1">Email</div>
                   <div className="flex items-center gap-2">
-                    <a href="mailto:virendraphirke2222@gmail.com" className="text-sm">virendraphirke2222@gmail.com</a>
+                    <a href="mailto:virendraphirke2222@gmail.com" className="text-sm break-all">virendraphirke2222@gmail.com</a>
                     <button onClick={copyEmail} className="text-muted-foreground hover:text-primary transition-colors ml-1 p-1 rounded hover:bg-muted" aria-label="Copy email" type="button">
                       {copied ? <Check className="w-4 h-4 text-primary" /> : <Copy className="w-4 h-4" />}
                     </button>
@@ -148,7 +148,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-3 border border-border rounded-none p-6 relative overflow-hidden group bg-transparent"
+            className="lg:col-span-3 border border-border rounded-none p-4 sm:p-6 relative overflow-hidden group bg-transparent"
           >
             <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
               <div className="grid md:grid-cols-2 gap-4">

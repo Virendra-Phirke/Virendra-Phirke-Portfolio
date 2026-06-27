@@ -29,6 +29,17 @@ const playfairDisplay = Playfair_Display({
   variable: '--font-playfair',
 });
 
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#09090b' }
+  ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: 'cover',
+};
+
 export const metadata: Metadata = {
   title: 'Virendra Phirke — Full-Stack Developer | React · Node.js · TypeScript',
   description: 'Full-stack developer from Maharashtra, India. Built QuizMaster (live SaaS), CampusMate (Android), and 10+ projects.',

@@ -41,7 +41,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" ref={containerRef} className="py-24 relative border-t border-border bg-background overflow-hidden">
+    <section id="experience" ref={containerRef} className="py-16 sm:py-24 relative border-t border-border bg-background overflow-hidden">
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-x-0 inset-y-[-20%] z-0 flex items-center justify-center pointer-events-none opacity-[0.02]"
@@ -65,7 +65,7 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
             <motion.span 
@@ -94,7 +94,7 @@ export default function Experience() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.2 } }
           }}
-          className="relative border-l border-border ml-4 md:ml-6 space-y-12 pb-8"
+          className="relative border-l border-border ml-3 sm:ml-4 md:ml-6 space-y-8 sm:space-y-12 pb-8"
         >
           {timeline.map((item, idx) => (
             <motion.div 
@@ -103,13 +103,13 @@ export default function Experience() {
                 hidden: { opacity: 0, x: -20, y: 20 },
                 visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, type: 'spring', bounce: 0.4 } }
               }}
-              className="relative pl-8 md:pl-12 group cursor-pointer"
+              className="relative pl-6 sm:pl-8 md:pl-12 group cursor-pointer"
             >
               <div className="absolute -left-1 top-2 bg-muted group-hover:bg-primary transition-colors w-2 h-2 rounded-full">
               </div>
               
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2 gap-2">
-                <h3 className="text-xl font-serif font-semibold text-foreground group-hover:italic transition-all">{item.title}</h3>
+                <h3 className="text-lg sm:text-xl font-serif font-semibold text-foreground group-hover:italic transition-all">{item.title}</h3>
               </div>
               
               <div className="text-primary font-mono text-xs uppercase tracking-widest mb-3">{item.organization}</div>

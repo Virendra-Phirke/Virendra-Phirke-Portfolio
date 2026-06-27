@@ -1,5 +1,6 @@
 'use client';
 import { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
@@ -179,6 +180,11 @@ export default function Projects() {
   const containerRef = useRef<HTMLElement>(null);
   const [filter, setFilter] = useState<ProjectType>("All");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -203,7 +209,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" ref={containerRef} className="py-24 relative border-t border-border/50 overflow-hidden">
+    <section id="projects" ref={containerRef} className="py-16 sm:py-24 relative border-t border-border/50 overflow-hidden">
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-x-0 inset-y-[-20%] z-0 flex items-center justify-center pointer-events-none opacity-[0.02]"
@@ -217,7 +223,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-8 sm:mb-12"
         >
           <div className="flex items-center gap-4 mb-4">
             <motion.span 
@@ -238,8 +244,8 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        <Tabs defaultValue="All" className="mb-12" onValueChange={(v) => setFilter(v as ProjectType)}>
-          <TabsList className="bg-transparent border border-border flex-wrap h-auto p-1 rounded-none justify-start flex">
+        <Tabs defaultValue="All" className="mb-8 sm:mb-12" onValueChange={(v) => setFilter(v as ProjectType)}>
+          <TabsList className="bg-transparent border border-border h-auto p-1 rounded-none justify-start flex overflow-x-auto no-scrollbar gap-0.5">
             {["All", "Full-Stack", "Android", "AI / ML", "Tools"].map((tab) => (
               <TabsTrigger key={tab} value={tab} className="rounded-none data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-mono text-[10px] sm:text-xs uppercase tracking-widest py-2 px-3 sm:px-4 shadow-none">
                 {tab}
@@ -248,7 +254,7 @@ export default function Projects() {
           </TabsList>
         </Tabs>
 
-        <motion.div layout className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <motion.div layout className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, idx) => (
               <TiltCard key={project.title} project={project} idx={idx} setSelectedProject={setSelectedProject}>
@@ -311,7 +317,8 @@ export default function Projects() {
         </motion.div>
       </div>
 
-      <AnimatePresence>
+      {mounted && createPortal(
+        <AnimatePresence>
         {selectedProject && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
             <motion.div 
@@ -323,7 +330,7 @@ export default function Projects() {
             />
             <motion.div 
               layoutId={`card-${selectedProject.title}`}
-              className="relative w-full max-w-2xl bg-card border border-border text-foreground overflow-hidden z-[101] shadow-2xl"
+              className="relative w-full max-w-2xl bg-background border border-border text-foreground overflow-hidden z-[101] shadow-2xl"
             >
               <Button 
                 variant="ghost" 
@@ -337,14 +344,14 @@ export default function Projects() {
                 <X className="w-4 h-4" />
               </Button>
 
-              <div className="flex flex-col relative max-h-[85vh] overflow-y-auto w-full styled-scrollbar">
-                <div className="p-8 pb-0">
+              <div className="flex flex-col relative max-h-[50vh] overflow-y-auto w-full styled-scrollbar">
+                <div className="p-5 sm:p-8 pb-0">
                   <div className="mb-6">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">{selectedProject.type}</span>
                       {selectedProject.featured && <span className="text-[10px] uppercase tracking-wider font-mono px-2 py-0.5 rounded-sm bg-primary/10 text-primary border border-primary/20">Featured</span>}
                     </div>
-                    <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-2 pr-12">{selectedProject.title}</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-2 pr-12">{selectedProject.title}</h2>
                     <p className="text-base sm:text-lg text-muted-foreground italic">
                       {selectedProject.subtitle}
                     </p>
@@ -377,7 +384,7 @@ export default function Projects() {
                   </div>
                 </div>
                 
-                <div className="bg-muted/50 p-8 border-t border-border shrink-0 mt-auto">
+                <div className="bg-muted/50 p-5 sm:p-8 border-t border-border shrink-0 mt-auto">
                   <div className="flex flex-col sm:flex-row gap-4">
                     {selectedProject.github && selectedProject.github !== "#" && (
                       <MagneticButton className="flex-1 w-full flex">
@@ -399,7 +406,9 @@ export default function Projects() {
             </motion.div>
           </div>
         )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 }

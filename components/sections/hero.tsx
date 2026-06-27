@@ -74,7 +74,7 @@ export default function Hero() {
 
   return (
     <>
-    <section ref={containerRef} id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+    <section ref={containerRef} id="hero" className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden pt-20 pb-16">
       {/* Background glow with Parallax */}
       <motion.div 
         style={{ y: y1, opacity }}
@@ -101,7 +101,7 @@ export default function Hero() {
               <span>Open to Opportunities</span>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="text-[12vw] sm:text-[60px] md:text-[100px] lg:text-[120px] leading-[0.9] md:leading-[0.8] font-heading font-black tracking-tighter uppercase mb-4 text-foreground break-words">
+            <motion.h1 variants={itemVariants} className="text-[11vw] sm:text-[60px] md:text-[100px] lg:text-[120px] leading-[0.85] sm:leading-[0.9] md:leading-[0.8] font-heading font-black tracking-tighter uppercase mb-3 sm:mb-4 text-foreground break-words">
               Hello, I&apos;m<br/> 
               <motion.span 
                 className="text-primary italic inline-flex"
@@ -138,20 +138,20 @@ export default function Hero() {
             </motion.h1>
 
             {/* Typewriter effect simulation */}
-            <motion.div variants={itemVariants} className="mb-6 mt-6 min-h-8 text-xl md:text-2xl text-muted-foreground font-mono uppercase tracking-widest">
-                {currentText}<span className="inline-block w-2 sm:w-3 h-5 sm:h-6 bg-primary ml-1 animate-pulse align-middle" />
+            <motion.div variants={itemVariants} className="mb-4 sm:mb-6 mt-4 sm:mt-6 min-h-7 sm:min-h-8 text-base sm:text-xl md:text-2xl text-muted-foreground font-mono uppercase tracking-widest">
+                {currentText}<span className="inline-block w-2 sm:w-3 h-4 sm:h-6 bg-primary ml-1 animate-pulse align-middle" />
             </motion.div>
 
             <motion.p 
               variants={itemVariants}
-              className="text-sm md:text-base text-muted-foreground max-w-md mb-10 leading-relaxed"
+              className="text-[13px] sm:text-sm md:text-base text-muted-foreground max-w-md mb-8 sm:mb-10 leading-relaxed"
             >
               I build highly scalable web apps, production-grade Android applications, and AI-powered tools. Transforming complex problems into elegant, code-native solutions.
             </motion.p>
 
             <motion.div 
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12"
             >
               <MagneticButton>
                 <a href="#projects" className="bg-foreground text-background px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest cursor-pointer hover:bg-muted-foreground transition-colors text-center inline-block w-full sm:w-auto">
@@ -213,7 +213,7 @@ export default function Hero() {
          initial={{ opacity: 0 }}
          animate={{ opacity: 1 }}
          transition={{ delay: 1.5, duration: 1 }}
-         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+         className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 sm:gap-2"
       >
          <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-muted-foreground z-10">Scroll To Explore</span>
          <motion.div

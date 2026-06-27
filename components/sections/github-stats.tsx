@@ -147,14 +147,14 @@ export default function GithubStats() {
   ];
 
   return (
-    <section id="github-stats" className="py-24 border-t border-border bg-background relative overflow-hidden">
+    <section id="github-stats" className="py-16 sm:py-24 border-t border-border bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-5xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
             <motion.span 
@@ -173,7 +173,7 @@ export default function GithubStats() {
             >Open Source</motion.h2>
             <div className="h-px bg-border flex-1 ml-4 hidden sm:block"></div>
           </div>
-          <p className="text-muted-foreground max-w-2xl text-lg mb-8">
+          <p className="text-muted-foreground max-w-2xl text-[15px] sm:text-lg mb-6 sm:mb-8">
             I believe in building publicly and contributing to the developer ecosystem. Here is a snapshot of my activity on GitHub.
           </p>
         </motion.div>
@@ -186,7 +186,7 @@ export default function GithubStats() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.15 } }
           }}
-          className="grid md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
         >
           {cards.map((card, idx) => (
             <SpotlightCard key={idx}>
@@ -200,7 +200,7 @@ export default function GithubStats() {
                   </div>
                   <h3 className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">{card.title}</h3>
                 </div>
-                <div className="text-4xl font-serif font-bold group-hover:italic transition-all">
+                <div className="text-3xl sm:text-4xl font-serif font-bold group-hover:italic transition-all">
                   {card.value}
                 </div>
               </div>
@@ -214,16 +214,16 @@ export default function GithubStats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-12 p-6 md:p-10 border border-border bg-muted/30 flex flex-col items-center justify-center relative overflow-hidden"
+          className="mt-8 sm:mt-12 p-4 sm:p-6 md:p-10 border border-border bg-muted/30 flex flex-col items-center justify-center relative overflow-hidden"
         >
-          <h3 className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-8 text-left w-full max-w-[850px]">Contributions Calendar</h3>
-          <div className="w-full max-w-[850px] overflow-x-auto pb-4 flex justify-start md:justify-center">
+          <h3 className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-5 sm:mb-8 text-left w-full max-w-[850px]">Contributions Calendar</h3>
+          <div className="w-full max-w-[850px] overflow-x-auto pb-2 sm:pb-4 flex justify-start md:justify-center -mx-2 px-2">
             <GitHubCalendar 
               username="Virendra-Phirke" 
               colorScheme="dark"
-              blockSize={12}
-              blockMargin={4}
-              fontSize={12}
+              blockSize={10}
+              blockMargin={3}
+              fontSize={11}
             />
           </div>
         </motion.div>

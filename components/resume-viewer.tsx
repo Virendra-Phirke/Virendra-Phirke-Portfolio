@@ -17,12 +17,14 @@ export default function ResumeViewer({ isOpen, onClose }: ResumeViewerProps) {
   const [pdfReady, setPdfReady] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
   // Lock body scroll, Escape key, and manage PDF loading state
   useEffect(() => {
     if (!isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPdfReady(false);
       return;
     }
@@ -68,7 +70,7 @@ export default function ResumeViewer({ isOpen, onClose }: ResumeViewerProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 16 }}
             transition={{ type: 'spring', damping: 28, stiffness: 320 }}
-            className="relative w-[90vw] h-[90vh] bg-card border border-border shadow-2xl flex flex-col overflow-hidden"
+            className="relative w-full h-full sm:w-[90vw] sm:h-[90vh] bg-card border-0 sm:border border-border shadow-2xl flex flex-col overflow-hidden"
             style={{ zIndex: 10000 }}
             onClick={(e) => e.stopPropagation()}
           >
